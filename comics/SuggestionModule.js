@@ -6,6 +6,15 @@ class SuggestionModule {
         this.render();
     }
 
+    render() {
+        $('.characters-container').empty();
+        this.chars.forEach(char => { 
+            $('.characters-container').append(`
+            <span class="character-tag">${char.name} <a data-i="${char.name}" href="#">X</a></span>
+            `);
+        });
+    }
+
     addCharacter(character) {
         let characterNames = this.chars.map( char => { return char.name });
         if (!(characterNames.includes(character.name))) {
@@ -20,15 +29,6 @@ class SuggestionModule {
         this.render();   
     }
 
-    render() {
-        $('.characters-container').empty();
-        this.chars.forEach(char => { 
-            $('.characters-container').append(`
-            <span class="character-tag">${char.name} <a data-i="${char.name}" href="#">X</a></span>
-            `);
-        });
-    }
-
     getCharacterId(char) {
         let encodedCharName = encodeURIComponent(char.name);
         let url = `https://gateway.marvel.com:443/v1/public/characters?name=${encodedCharName}&apikey=${this.apiKey}`;
@@ -41,7 +41,20 @@ class SuggestionModule {
                 char.id = id;
                 console.log(char.id);
             }
+        });
+    } {
 
+    }
+
+    getComicSuggestions(chars) {
+        let characterNameArray = this.chars.map( char => { return char.name });
+        let characterIdArray = characterNameArray.map( char => { this.getCharacterId(char) });
+
+        let url = `https://gateway.marvel.com:443/v1/public/comics?characters=${characterIdArray}&apikey=${this.apiKey}`;
+        $.get(url, response => {
+            console.log(response);
         });
     }
+
+
 }
