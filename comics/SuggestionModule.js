@@ -49,7 +49,7 @@ class SuggestionModule {
     getComicSuggestions(chars) {
         let characterNameArray = this.chars.map( char => { return char.name });
         let characterIdArray = characterNameArray.map( char => { this.getCharacterId(char) });
-        let characterIdsEncoded = encodeURIComponent(characterIdArray.join());
+        let characterIdsEncoded = encodeURIComponent(characterIdArray);
 
         let url = `https://gateway.marvel.com:443/v1/public/comics?characters=${characterIdsEncoded}&apikey=${this.apiKey}`;
         $.get(url, response => {
