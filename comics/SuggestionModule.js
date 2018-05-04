@@ -42,9 +42,9 @@ class SuggestionModule {
                 console.log(char.id);
             }
         });
-    } {
+    } 
 
-    }
+    
 
     getComicSuggestions(chars) {
         let characterNameArray = this.chars.map( char => { return char.name });
