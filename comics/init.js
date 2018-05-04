@@ -10,6 +10,8 @@ $(function() {
         suggestionModule.addCharacter({name: charName, id: null});
     });
 
+    $('.delete-button').click( e => {
+    });
 
 
 
