@@ -15,20 +15,6 @@ class SuggestionModule {
         });
     }
 
-    addCharacter(character) {
-        let characterNames = this.chars.map( char => { return char.name });
-        if (!(characterNames.includes(character.name))) {
-        this.chars.push(character);
-        }
-        this.render();
-    }
-
-    deleteCharacter(character) {
-        let pos = this.chars.map(function(e) { return e.name; }).indexOf(character);
-        this.chars.splice(pos, 1);
-        this.render();   
-    }
-
     getCharacterId(char) {
         let encodedCharName = encodeURIComponent(char.name);
         let url = `https://gateway.marvel.com:443/v1/public/characters?name=${encodedCharName}&apikey=${this.apiKey}`;
@@ -43,15 +29,40 @@ class SuggestionModule {
             }
         });
     } 
-
     
+    addCharacter(character) {
+        let characterNames = this.chars.map( char => { return char.name });
+        if (!(characterNames.includes(character.name))) {
+        this.chars.push(character);
+        this.getCharacterId(character);
+        }
+        this.render();
+
+    }
+
+    deleteCharacter(character) {
+        let pos = this.chars.map(function(e) { return e.name; }).indexOf(character);
+        this.chars.splice(pos, 1);
+        this.render();   
+    }
 
     getComicSuggestions(chars) {
-        let characterNameArray = this.chars.map( char => { return char.name });
-        let characterIdArray = characterNameArray.map( char => { this.getCharacterId(char) });
-        let characterIdsEncoded = encodeURIComponent(characterIdArray);
 
-        let url = `https://gateway.marvel.com:443/v1/public/comics?characters=${characterIdsEncoded}&apikey=${this.apiKey}`;
+        let characterIdArray = this.chars.map( char => { return char.id });
+        let characterIdString = "";
+        let i = 1; 
+        characterIdArray.forEach( char => {
+            characterIdString += char;
+            if (i < characterIdArray.length) {
+                characterIdString += ',';
+                i++
+            }
+        });
+        
+        let encodedCharacterIds = encodeURIComponent(characterIdString);
+
+        let url = `https://gateway.marvel.com:443/v1/public/comics?apikey=${this.apiKey}&characters=${encodedCharacterIds}`;
+        
         $.get(url, response => {
             console.log(response);
         });
