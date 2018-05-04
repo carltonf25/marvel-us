@@ -14,7 +14,26 @@ input {
     margin-bottom: 20px;
 }
 
+.characters-container {
+    margin-top: 20px;
+}
+
+.character-tag {
+    background-color: #A5D6A7;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.character-tag a {
+    text-decoration: none;
+    color: #424242;
+}
+
 .suggestions-container {
     margin-top: 50px;
     border-top: 1px solid grey;
+}
+
+.suggest-btn {
+    margin: 20px auto;
 }
