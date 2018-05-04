@@ -1,0 +1,20 @@
+/* Navbar stuff */
+
+
+
+
+/* Search module stuff */
+
+h1 {
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+
+input {
+    margin-bottom: 20px;
+}
+
+.suggestions-container {
+    margin-top: 50px;
+    border-top: 1px solid grey;
+}
