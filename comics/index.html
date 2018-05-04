@@ -6,11 +6,37 @@
     <title>Comic Suggestions</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <script src="../js/SuggestionModule.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="SuggestionModule.js"></script>
 </head>
 <body>
-    <nav class="nav bg-dark">
-        
-    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Marvel-Us</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#">Comics<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">Characters</a>
+            <a class="nav-item nav-link" href="#">Saved</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+          <div class="row">
+              <div class="col-12 text-center">
+                  <h1>Comic Suggestions</h1>
+                  <input class="form-control form-control-lg" type="text" placeholder="Enter some characters (Thor, Spider-Man, Iron Man)">
+                  <button type="submit" class="btn btn-primary">Search</button>
+              </div>
+          </div>
+          <div class = "row">
+              <div class="col-12 d-flex suggestions-container">
+                
+              </div>
+          </div>
+      </div>
 </body>
 </html>
