@@ -13,7 +13,11 @@ $(function() {
     $('.delete-button').click( e => {
     });
 
-
+    $('.suggest-btn').click( e => {
+        e.preventDefault();
+        $('.suggestions-container').empty();
+        suggestionModule.getComicSuggestions();
+    });
 
 });
 
