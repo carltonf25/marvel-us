@@ -1,11 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Page Title</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <title>Marvel-US Login Page</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
 </head>
 <body>
-    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Marvel-Us</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#">Comics<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">Characters</a>
+            <a class="nav-item nav-link" href="#">Saved</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="container">
+            <div class="row" id="heroRow">
+                <div class="col-3">
+                    <div class="card" id="hero_img" style="width: 10rem;">
+                        <img class="card-img-top" src="img/hero1_BP.jpg" alt="Card image cap">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card" id="hero_img" style="width: 10rem;">
+                        <img class="card-img-top" src="img/hero2_Th.jpg" alt="Card image cap">
+                    </div>    
+                </div>
+                <div class="col-3">
+                    <div class="card" id="hero_img" style="width: 10rem;">
+                        <img class="card-img-top" src="img/hero3_CA.jpg" alt="Card image cap">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card" id="hero_img" style="width: 10rem;">
+                        <img class="card-img-top" src="img/hero4_Hu.jpg" alt="Card image cap">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="login-form">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <div class="row" id="heroRow">
+                <div class="col-3">
+                    <div class="card" id="hero_img" style="width: 10rem;">
+                        <img class="card-img-top" src="img/comic1_Wo.jpg" alt="Card image cap">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card" id="hero_img" style="width: 10rem;">
+                        <img class="card-img-top" src="img/comic2_In.jpg" alt="Card image cap">
+                    </div>    
+                </div>
+                <div class="col-3">
+                    <div class="card" id="hero_img" style="width: 10rem;">
+                        <img class="card-img-top" src="img/comic3_Av.jpg" alt="Card image cap">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card" id="hero_img" style="width: 10rem;">
+                        <img class="card-img-top" src="img/comic4_Hu.jpg" alt="Card image cap">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
