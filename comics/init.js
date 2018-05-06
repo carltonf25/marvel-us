@@ -10,6 +10,10 @@ $(function() {
         suggestionModule.addCharacter({name: charName, id: null});
     });
 
+    $('.clear-button').click (e => {
+        location.reload();
+    });
+
     $('.delete-button').click( e => {
         suggestionModule.deleteCharacter($(this).data('id'));
     });
