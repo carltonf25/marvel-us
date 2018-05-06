@@ -37,3 +37,7 @@ input {
 .suggest-btn {
     margin: 20px auto;
 }
+
+.card {
+    margin: 5px;
+}

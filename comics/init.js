@@ -11,6 +11,7 @@ $(function() {
     });
 
     $('.delete-button').click( e => {
+        suggestionModule.deleteCharacter($(this).data('id'));
     });
 
     $('.suggest-btn').click( e => {

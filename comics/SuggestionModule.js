@@ -10,7 +10,7 @@ class SuggestionModule {
         $('.characters-container').empty();
         this.chars.forEach(char => { 
             $('.characters-container').append(`
-            <span class="character-tag">${char.name} <a data-i="${char.name}" href="#">X</a></span>
+            <span class="character-tag">${char.name} <a data-id="${char.name}-tag" href="#">X</a></span>
             `);
         });
     }
@@ -41,7 +41,7 @@ class SuggestionModule {
     }
 
     deleteCharacter(character) {
-        let pos = this.chars.map(function(e) { return e.name; }).indexOf(character);
+        let pos = this.chars.map( char => { char.name; }).indexOf(character);
         this.chars.splice(pos, 1);
         this.render();   
     }
@@ -70,7 +70,7 @@ class SuggestionModule {
 
         /* Parse the response, output comic data to bootstrap cards */ 
         $.get(url, response => {
-            let size = 5;
+            let size = 10;
             let comicArray = response.data.results.slice(0, size).map( result => {
                   return result;
             });
