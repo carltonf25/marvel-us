@@ -14,10 +14,6 @@ $(function() {
         location.reload();
     });
 
-    $('.delete-button').click( e => {
-        suggestionModule.deleteCharacter($(this).data('id'));
-    });
-
     $('.suggest-btn').click( e => {
         e.preventDefault();
         $('.suggestions-container').empty();

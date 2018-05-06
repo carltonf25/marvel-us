@@ -10,7 +10,7 @@ class SuggestionModule {
         $('.characters-container').empty();
         this.chars.forEach(char => { 
             $('.characters-container').append(`
-            <span class="character-tag">${char.name} <a data-id="${char.name}-tag" href="#">X</a></span>
+            <span class="character-tag">${char.name}</span>
             `);
         });
     }
