@@ -37,7 +37,6 @@ class SuggestionModule {
         this.getCharacterId(character);
         }
         this.render();
-
     }
 
     deleteCharacter(character) {
@@ -47,7 +46,6 @@ class SuggestionModule {
     }
 
     getComicSuggestions() {
-
         /* Begin method call and display loader gif */
         console.log('Finding suggestions...');
         $('.suggestions-container').append(`
@@ -55,6 +53,8 @@ class SuggestionModule {
         `); 
         let characterIdArray = this.chars.map( char => { return char.id });
         let characterIdString = "";
+        
+        /* Loop over character IDs ad build a string of comma-separated character Ids */
         let i = 1; 
         characterIdArray.forEach( char => {
             characterIdString += char;
@@ -64,10 +64,9 @@ class SuggestionModule {
             }
         });
         
-        /* Send encoded Character IDs to the /comics endpoint */
+        /* Send url-encoded Character IDs to the /comics endpoint */
         let encodedCharacterIds = encodeURIComponent(characterIdString);
         let url = `https://gateway.marvel.com:443/v1/public/comics?apikey=${this.apiKey}&characters=${encodedCharacterIds}`;
-
 
         /* Parse the response, display loading gif, and console log results */ 
         $.get(url, response => {
