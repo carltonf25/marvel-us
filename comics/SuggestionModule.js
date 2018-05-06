@@ -21,7 +21,7 @@ class SuggestionModule {
         
         $.get(url, response => {
             let id = response.data.results[0].id;
-            if (id < 0) {
+            if (id < 0)) {
                 console.log(`${char} is not a known character. Try again.`);
             } else {
                 char.id = id;
