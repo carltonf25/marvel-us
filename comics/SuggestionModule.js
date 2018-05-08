@@ -21,22 +21,19 @@ class SuggestionModule {
         
         $.get(url, response => {
             let id = response.data.results[0].id;
-            if (id < 0)) {
-                console.log(`${char} is not a known character. Try again.`);
-            } else {
-                char.id = id;
-                console.log(char.id);
-            }
+            char.id = id;
+            console.log(char.id);
         });
     } 
     
     addCharacter(character) {
+       
         let characterNames = this.chars.map( char => { return char.name });
         if (!(characterNames.includes(character.name))) {
-        this.chars.push(character);
-        this.getCharacterId(character);
+            this.getCharacterId(character);
+            this.chars.push(character);
+            this.render();
         }
-        this.render();
     }
 
     deleteCharacter(character) {
