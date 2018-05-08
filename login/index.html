@@ -2,10 +2,13 @@
 <html>
 <head>
     <title>Marvel-US Login Page</title>
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+    <script src="login.js"></script>
+    <script src="database.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -46,21 +49,26 @@
                     </div>
                 </div>
             </div>
-            <h6>Log in to start exploring your new favorite Heroes and read all of their <em>Marvel-Us</em> Comics!</h6>
             <div class="row" id="loginRow">
+                    <h6>Log in to start exploring your new favorite Heroes and read all of their <em>Marvel-Us</em> Comics!</h6>
                 <div class="login-form">
                     <form>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
+                            <label for="inputEmail">Email address</label>
                             <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
+                            <label for="inputPassword">Password</label>
                             <input type="password" class="form-control" id="inputPassword" placeholder="Password">
                         </div>
                         <button type="submit" id="loginButton" class="btn btn-primary">Log In</button>
+                        <button type="submit" id="signupButton" class="btn btn-primary">Sign Up</button>
                     </form>
                 </div>
+            </div>
+
+            <div class="row" id="logoutRow">
+                    <button type="submit" id="logoffButton" class="btn hide btn-danger">Log Out</button>
             </div>
 
             <h3>COMICS</h3>
