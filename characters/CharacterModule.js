@@ -34,7 +34,7 @@ class CharacterModule {
         .then(  p => {
             let charId = this.character.id;
             let url = `https://gateway.marvel.com:443/v1/public/characters?id=${charId}&apikey=${this.apiKey}`;
-  
+
             $.get(url, response => {
                 console.log(response);
             }).catch(function (err) {
