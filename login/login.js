@@ -17,6 +17,7 @@ $(function() {
             console.log(firebaseUser);
             $("#loginRow").hide();
             $("#logoutRow").show();
+            //window.location = '../characters/index.html';
         } else {
           // No user is signed in.
             console.log("not logged in");
