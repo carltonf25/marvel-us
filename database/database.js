@@ -5,13 +5,11 @@ $(function() {
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if (firebaseUser) {
           // User is signed in.
-            console.log(firebaseUser);
+            console.log(firebaseUser.sa.uid);
 
-            //window.location = '../characters/index.html';
-            //localStorage.setItem("currentUser", firebaseUser.uid)
         } else {
           // No user is signed in.
-            console.log("not logged in");
+            console.log("not logged in database.js");
         }
       });
 //const dbRefObject = firebase.database().ref().child('object');
