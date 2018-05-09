@@ -6,7 +6,7 @@ $(function() {
             console.log(firebaseUser);
             $("#loginRow").hide();
             $("#logoutRow").show();
-            //window.location = '../characters/index.html';
+            window.location = '../characters/index.html';
             //localStorage.setItem("currentUser", firebaseUser.uid)
             
                
