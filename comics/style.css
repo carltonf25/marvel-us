@@ -69,7 +69,7 @@ input {
 }
 
 .character-tag {
-    background-color: #A5D6A7;
+    background-color: #006BFF;
     padding: 5px;
     margin-left: 10px;
 }
@@ -98,4 +98,5 @@ input {
 
 .card {
     margin: 5px;
+    background: lightslategray;
 }
