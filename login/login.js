@@ -1,16 +1,5 @@
 $(function() {
 
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyDBiZ9dZXPS4fPsgVS7QZlZYW6BTzFEE4w",
-        authDomain: "marvel-us-3047f.firebaseapp.com",
-        databaseURL: "https://marvel-us-3047f.firebaseio.com",
-        projectId: "marvel-us-3047f",
-        storageBucket: "marvel-us-3047f.appspot.com",
-        messagingSenderId: "719162564470"
-    };
-    firebase.initializeApp(config);
-
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if (firebaseUser) {
           // User is signed in.
@@ -18,6 +7,9 @@ $(function() {
             $("#loginRow").hide();
             $("#logoutRow").show();
             //window.location = '../characters/index.html';
+            //localStorage.setItem("currentUser", firebaseUser.uid)
+            
+               
         } else {
           // No user is signed in.
             console.log("not logged in");
@@ -46,14 +38,20 @@ $(function() {
         let inputPassword = $("#inputPassword").val();
         //console.log("U " + inputEmail + "P " + inputPassword );
         const promise = auth.createUserWithEmailAndPassword(inputEmail, inputPassword);
-        promise.catch(e => console.log(e.message));
+        promise.then(e => {
+            console.log(e)
+            console.log("Createing new user database!")
+            var newUserUpdate = {};
+            newUserUpdate['/' + e.user.uid + '/user-comics/'] = "One";
+            newUserUpdate['/' + e.user.uid + '/user-heroes/'] = "Two";
+            console.log("Posted something to database?");
+            return firebase.database().ref().update(newUserUpdate);
+        }).catch(e => console.log(e.message));
     });
     
     $("#logoutRow").click(function(){
         firebase.auth().signOut();
     });
-
-
     
     
 });
