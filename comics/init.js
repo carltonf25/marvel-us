@@ -20,6 +20,16 @@ $(function() {
         suggestionModule.getComicSuggestions();
     });
 
+    $('.save-btn').click( e => {
+
+    });
+
+    /* log out button 
+    $("#logoutRow").click(function(){
+    firebase.auth().signOut();
+
+    });*/
+
 });
 
 
