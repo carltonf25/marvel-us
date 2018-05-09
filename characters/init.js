@@ -1,5 +1,5 @@
 $(function() {
-
+    var userId = ""
     console.log('init.js loaded')
     
     // initialize  new SuggestionModule listeners
@@ -18,5 +18,22 @@ $(function() {
     $('.clear-button').click (e => {
         location.reload();
     });
+
+    $("#logOutButton").click(function(){
+        console.log("logging out of user")
+        firebase.auth().signOut();
+    });
+
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+        if (firebaseUser) {
+          // User is signed in.
+            console.log(firebaseUser.uid);
+            userId = firebaseUser.uid;
+        } else {
+          // No user is signed in.
+          window.location = '../login/index.html';  
+          console.log("not logged in");
+        }
+      });
 
 });
