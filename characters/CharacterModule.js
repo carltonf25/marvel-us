@@ -42,7 +42,7 @@ class CharacterModule {
                 </button>
             </div>
             <div class="modal-body">
-                <img class= src="${charImgURL}" />
+                <img src="${charImgURL}" />
                 <h4>Bio:</h4>
                 <p>${charDescription}</p>
             </div>
