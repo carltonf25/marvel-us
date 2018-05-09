@@ -33,7 +33,9 @@
         <div class="col-12 search-bar text-center">
           <h2>Enter a character</h2>
           <input class="form-control form-control-lg" type="text" placeholder="Enter a character name">
-          <button type="submit" class="btn btn-primary search-button">Search</button>
+          <button type="submit" class="btn btn-primary search-button" data-toggle="modal" data-target=".bd-example-modal-lg">
+            Search
+          </button>
           <button class="btn btn-secondary clear-button">Clear All</button>
         </div>
       </div>
@@ -41,14 +43,15 @@
     <div class="container">
       <div class="row">
         <!-- modal -->  
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
             </div>
           </div>
         </div>
+        <div class="content-test">
 
+        </div>
       </div>
       </div>
     </div>

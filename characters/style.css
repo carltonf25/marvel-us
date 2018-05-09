@@ -5,3 +5,7 @@
 .search-bar input {
     margin-bottom: 20px;
 }
+
+.modal-body img {
+    width: 200px;
+}
