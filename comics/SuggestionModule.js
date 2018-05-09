@@ -100,7 +100,7 @@ class SuggestionModule {
                 
                 /* Output bootstrap card with each comic's data */
                 $('.suggestions-container').append(`
-                <div class="card p-2 id-${comic.id}" style="width: 18rem;">
+                <div class="card p-2" id="${comic.id}" style="width: 18rem;">
                     <img class="card-img-top" src=${imgUrl} alt="Card image cap" />
                     <div class="card-body">
                     <h5 class="card-title">${comic.title}</h5>
