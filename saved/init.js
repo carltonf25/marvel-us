@@ -20,7 +20,7 @@ $(function() {
         
       });
 
-     let userData = firebase.database().ref('/user-data/'+userId);
+     let userData = firebase.database().ref('/user-data/'+userId)["comic-id"];
 
         userData.once('value', function(snapshot){
             snapshot.forEach(function(childSnapshot) {
