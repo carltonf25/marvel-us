@@ -1,0 +1,50 @@
+/* Background Stuff */
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+}
+
+.responsive {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+}
+.landing-logo {
+    padding-top: 90px;
+    padding-bottom: 50px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.home {
+    background: url(../landing/images/comic-pages1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 5px; 
+}
+
+h3 {
+    padding-top: 20px;
+}
+
+.background {
+    background-image: url(../landing/images/galaxy.jpg);
+    background-size: cover;
+}
+
+.overlay {
+    position: relative;
+    width: 100%;
+    min-height: 300px;;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);  
+}
+
+.container h1 {
+    text-align: center;
+    padding-top: 20px;
+}
