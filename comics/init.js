@@ -20,10 +20,10 @@ $(function() {
         suggestionModule.getComicSuggestions();
     });
 
-    $('.save-btn').click( e => {
+    $('.card-body').on( 'click', '.save-btn', e => {
 
         let comicID = $(this).data('id');
-        console.log(comicID)
+        console.log(comicID);
 
         $("[data-id='"+comicID+"']").html('SAVED');
         $("[data-id='"+comicID+"']").toggleClass('btn-success');
