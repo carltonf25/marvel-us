@@ -69,7 +69,7 @@ $(function() {
           console.log("not logged in");
         } 
         
-        */
+        
       }); 
 });
 
