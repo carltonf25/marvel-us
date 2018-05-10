@@ -42,8 +42,8 @@ $(function() {
             console.log(e)
             console.log("Createing new user database!")
             var newUserUpdate = {};
-            newUserUpdate['user-data/' + e.user.uid + '/user-comics/'] = "";
-            newUserUpdate['user-data/' + e.user.uid + '/user-heroes/'] = "";
+            newUserUpdate['user-data/' + e.user.uid + '/user-comics/{}'];
+            newUserUpdate['user-data/' + e.user.uid + '/user-heroes/{}'];
             console.log("Posted something to database?");
             return firebase.database().ref().update(newUserUpdate);
         }).catch(e => console.log(e.message));
