@@ -106,7 +106,7 @@ class SuggestionModule {
                     <h5 class="card-title">${comic.title}</h5>
                     <h5 class="card-title">Description:</h5>
                     <p class="card-text">${description}</p>
-                    <a href="#" class="btn btn-primary save-btn">Save Comic</a>
+                    <a href="#" data-id="${comic.id}" class="btn btn-primary save-btn">Save Comic</a>
                     </div>
                 </div>
                 `);
