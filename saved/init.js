@@ -21,7 +21,7 @@ $(function() {
       });
 
      let userData = firebase.database().ref('/user-data/'+userId);
-     let dataObj = JSON.parse(userdata);
+     let dataObj = JSON.parse(userData);
         console.log(dataObj);
 
         dataObj.once('value', function(snapshot){
