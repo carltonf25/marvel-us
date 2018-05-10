@@ -29,9 +29,7 @@ $(function() {
                 console.log(childKey);
                 console.log(childData);
                 for (value in childData["user-comics"]) {
-                    if (!userData.hasOwnProperty(value)) continue;
                     console.log(value);
-                    console.log(userData[value]);
                     }
 
                 });
