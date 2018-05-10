@@ -20,15 +20,16 @@ $(function() {
         suggestionModule.getComicSuggestions();
     });
 
-    $('.save-btn').click( e => {
-        e.preventDefault()
-        console.log(this);
-        console.log(e);
-        console.log(e.target.parentElement.parentElement.id);
-        let comicID = e.target.parentElement.parentElement.id;
-        $("[data-id='"+comicID+"']").html('SAVED');
-        $("[data-id='"+comicID+"']").toggleClass('btn-success');
-        $("[data-id='"+comicID+"']").prop('disabled', true);
+    $('.suggestions-container').on('click', '.save-btn', e => {
+        console.log(e.target);
+        let comicID = $(e.target).data('id');
+        console.log(comicID);
+
+        $(e.target).html('SAVED');
+        $(e.target).toggleClass('btn-success');
+        $(e.target).prop('disabled', true);
+
+        
         //console.log($("[data-id='"+comicID+"']").prop('disabled'));
         let currentComics = firebase.database().ref('/user-data/'+userId + '/user-comics/').once('value').then(function(snapshot) {
             console.log(snapshot);
@@ -49,6 +50,7 @@ $(function() {
             firebase.database().ref().update(savingComic);
         }
         });
+        e.preventDefault();
     });
 
     $("#logOutButton").click(function(){
@@ -65,8 +67,10 @@ $(function() {
           // No user is signed in.
           window.location = '../login/index.html';  
           console.log("not logged in");
-        }
-      });
+        } 
+        
+        
+      }); 
 });
 
 
