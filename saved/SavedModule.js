@@ -11,7 +11,7 @@ getSavedComics() {
     /* Begin method call and display loader gif */
     console.log('Getting saved comics...');
     $('.saved-container').append(`
-       <img class="loader m-auto" src="loader.gif" />
+       <img class="loader m-auto" src="../comics/loader.gif" />
     `);
 
 
