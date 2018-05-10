@@ -19,7 +19,7 @@ $(function() {
         
       });
 
-     let userData = firebase.database().ref('/user-data/'+userId + '/user-comics/');
+     let userData = firebase.database().ref('/user-data/'+userId);
         console.log(userData);
 
       userData.once("value", snapshot => {
