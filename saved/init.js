@@ -28,7 +28,7 @@ $(function() {
                 var childData = childSnapshot.val();
                 console.log(childKey);
                 console.log(childData);
-                for (value in childData["user-comics"].values()) {
+                for (value in childData["user-comics"]) {
                     console.log(value);
                     }
 
