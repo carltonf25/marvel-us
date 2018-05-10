@@ -4,17 +4,17 @@ $(function() {
         if (firebaseUser) {
           // User is signed in.
             console.log(firebaseUser);
-            $("#loginRow").hide();
-            $("#logoutRow").show();
-            window.location = '../characters/index.html';
+            //$("#loginRow").hide();
+            //$("#logoutRow").show();
+            window.location = '../comics/index.html';
             //localStorage.setItem("currentUser", firebaseUser.uid)
             
                
         } else {
           // No user is signed in.
-            console.log("not logged in");
-            $("#loginRow").show();
-            $("#logoutRow").hide();
+            console.log("not logged in login.js");
+            //$("#loginRow").show();
+            //$("#logoutRow").hide();
         }
       });
     const auth = firebase.auth();
@@ -42,8 +42,8 @@ $(function() {
             console.log(e)
             console.log("Createing new user database!")
             var newUserUpdate = {};
-            newUserUpdate['/' + e.user.uid + '/user-comics/'] = "One";
-            newUserUpdate['/' + e.user.uid + '/user-heroes/'] = "Two";
+            newUserUpdate['/' + e.user.uid + '/user-comics/'] = "";
+            newUserUpdate['/' + e.user.uid + '/user-heroes/'] = "";
             console.log("Posted something to database?");
             return firebase.database().ref().update(newUserUpdate);
         }).catch(e => console.log(e.message));
