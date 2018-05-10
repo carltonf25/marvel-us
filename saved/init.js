@@ -33,12 +33,11 @@ $(function() {
                 console.log(idsArray);
                 });
             });
-        });
-
-
-
-
-
-
-
 });
+
+
+
+
+
+
+
