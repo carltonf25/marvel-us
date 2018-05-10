@@ -29,9 +29,9 @@ $(function() {
                 console.log(childKey);
                 console.log(childData);
                 for (key in userData) {
-                    if (!userData.hasOwnProperty(key)) continue;
-                    console.log(key);
-                    console.log(userData[key]);
+                    if (!userData.hasOwnProperty(value)) continue;
+                    console.log(value);
+                    console.log(userData[value]);
                     }
 
                 });
