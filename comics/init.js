@@ -20,7 +20,7 @@ $(function() {
         suggestionModule.getComicSuggestions();
     });
 
-    $(document).on('click', '.save-btn', e => {
+    $('.suggestions-container').on('click', '.save-btn', e => {
         console.log($(this));
         let comicID = $(this).data('id');
         console.log(comicID);
