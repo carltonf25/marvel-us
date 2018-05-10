@@ -29,9 +29,8 @@ $(function() {
                 var childData = childSnapshot.val();
                 console.log(childKey);
                 console.log(childData);
-                childData.forEach( obj => {
-                    idsArray.push(obj.value());
-                    console.log(idsArray);
+                let idsArray = childData.user-comics.values();
+                console.log(idsArray);
                 });
             });
         });
