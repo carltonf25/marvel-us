@@ -21,10 +21,34 @@ $(function() {
     });
 
     $('.save-btn').click( e => {
+        e.preventDefault()
+        console.log(this);
         console.log(e);
-        console.log(this.id);
-        savingComic['/' + userId + '/user-comics/'] = e.id;
-        firebase.database().ref().update(savingComic);
+        console.log(e.target.parentElement.parentElement.id);
+        let comicID = e.target.parentElement.parentElement.id;
+        $("[data-id='"+comicID+"']").html('SAVED');
+        $("[data-id='"+comicID+"']").toggleClass('btn-success');
+        $("[data-id='"+comicID+"']").prop('disabled', true);
+        //console.log($("[data-id='"+comicID+"']").prop('disabled'));
+        let currentComics = firebase.database().ref('/user-data/'+userId + '/user-comics/').once('value').then(function(snapshot) {
+            console.log(snapshot);
+            console.log(snapshot.val());
+            return snapshot.val();
+        }).then(function(snap){
+            let savingComic = {};
+        if (snap == null || "") {
+            console.log("There are no comics saved");
+            let newComicKey = firebase.database().ref().child(userId).child('user-comics').push().key;
+            savingComic['/user-data/' + userId + '/user-comics/' + newComicKey] = comicID;
+            firebase.database().ref().update(savingComic);
+        }
+        else {
+            console.log("There is already at least one comic saved. appending new comics.");
+            let newComicKey = firebase.database().ref().child(userId).child('user-comics').push().key;
+            savingComic['/user-data/' + userId + '/user-comics/' + newComicKey] = comicID;
+            firebase.database().ref().update(savingComic);
+        }
+        });
     });
 
     $("#logOutButton").click(function(){
