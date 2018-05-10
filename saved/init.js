@@ -19,10 +19,9 @@ $(function() {
         
       });
 
-    // firebase.database().ref('/user-data/'+userId + '/user-comics/').once('value').then(function(snapshot) { 
-        firebase.database().ref('/user-data/'+userId +'/'.child('user-comics').then(function(snapshot) {
-        console.log(snapshot)
-        }));
+     firebase.database().ref('/user-data/'+userId + '/user-comics/').once('value').then(function(snapshot) { 
+        console.log(snapshot).child('user-comics'); 
+        });
 
 
 
