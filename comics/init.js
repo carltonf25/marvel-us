@@ -41,7 +41,7 @@ $(function() {
             console.log("There are no comics saved");
             let newComicKey = firebase.database().ref().child(userId).child('user-comics').push().key;
             savingComic['/user-data/' + userId + '/user-comics/' + newComicKey] = comicID;
-            firebase.database().ref().update(savingComic);
+            firebase.database().ref().set(savingComic);
         }
         else {
             console.log("There is already at least one comic saved. appending new comics.");
