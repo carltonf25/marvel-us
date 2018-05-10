@@ -100,13 +100,13 @@ class SuggestionModule {
                 
                 /* Output bootstrap card with each comic's data */
                 $('.suggestions-container').append(`
-                <div class="card p-2 id-${comic.id}" style="width: 18rem;">
+                <div class="card p-2" id="${comic.id}" style="width: 18rem;">
                     <img class="card-img-top" src=${imgUrl} alt="Card image cap" />
                     <div class="card-body">
                     <h5 class="card-title">${comic.title}</h5>
                     <h5 class="card-title">Description:</h5>
                     <p class="card-text">${description}</p>
-                    <a href="#" class="btn btn-primary save-btn">Save Comic</a>
+                    <a href="#" data-id="${comic.id}" class="btn btn-primary save-btn">Save Comic</a>
                     </div>
                 </div>
                 `);
