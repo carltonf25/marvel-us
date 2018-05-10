@@ -22,20 +22,18 @@ $(function() {
 
      let userData = firebase.database().ref('/user-data/'+userId);
 
-    for (key in userData) {
-        if (!userData.hasOwnProperty(key)) continue;
-        console.log(key);
-        console.log(userData[key]);
-        }
-
         userData.once('value', function(snapshot){
             snapshot.forEach(function(childSnapshot) {
                 var childKey = childSnapshot.key;
                 var childData = childSnapshot.val();
                 console.log(childKey);
                 console.log(childData);
-                let idsArray = childData["user-comics"].values();
-                console.log(idsArray);
+                for (key in userData) {
+                    if (!userData.hasOwnProperty(key)) continue;
+                    console.log(key);
+                    console.log(userData[key]);
+                    }
+
                 });
             });
 });
