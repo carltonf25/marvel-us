@@ -29,7 +29,7 @@ $(function() {
                 var childData = childSnapshot.val();
                 console.log(childKey);
                 console.log(childData);
-                let idsArray = childData.values();
+                let idsArray = childData["user-comics"].values();
                 console.log(idsArray);
                 });
             });
