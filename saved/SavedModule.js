@@ -17,10 +17,6 @@ getSavedComics() {
 
 // firebase data 
 
-    firebase.database().ref('/user-data/'+userId + '/user-comics/').once('value').then(function(snapshot) { 
-    console.log(snapshot)
-    });
-
    
 }
 
