@@ -22,15 +22,14 @@ $(function() {
 
     $('.suggestions-container').on('click', '.save-btn', e => {
         console.log(e);
-        console.log($(this));
-        let comicID = $(this).data('id');
+        let comicID = e.data('id');
         console.log(comicID);
 
         $("[data-id='"+comicID+"']").html('SAVED');
         $("[data-id='"+comicID+"']").toggleClass('btn-success');
         $("[data-id='"+comicID+"']").prop('disabled', true);
 
-        /*
+        
         //console.log($("[data-id='"+comicID+"']").prop('disabled'));
         let currentComics = firebase.database().ref('/user-data/'+userId + '/user-comics/').once('value').then(function(snapshot) {
             console.log(snapshot);
