@@ -44,6 +44,9 @@ h3 {
     background-color: rgba(0, 0, 0, 0.75);  
 }
 
+.modal {
+    background: #333A41;
+}
 
 
 /* Character Search*/
