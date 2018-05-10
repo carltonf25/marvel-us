@@ -22,11 +22,6 @@ $(function() {
      let userData = firebase.database().ref('/user-data/'+userId);
         console.log(userData);
 
-      userData.once("value", snapshot => {
-        console.log(snapshot.val());
-      });
-
-
         userData.once('value', function(snapshot){
             snapshot.forEach(function(childSnapshot) {
                 var childKey = childSnapshot.key;
@@ -36,9 +31,9 @@ $(function() {
             });
         });
 
-
-
-
+        childData.forEach( obj => {
+            console.log(obj.value());
+        });
 
 
 
