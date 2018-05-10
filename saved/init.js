@@ -1,6 +1,9 @@
 $(function() {
-    let userId = savedModule.userId;
+
     let savedModule = new SavedModule;
+
+    let userId = savedModule.userId;
+    
     savedModule.getSavedComics();
 
     firebase.auth().onAuthStateChanged(firebaseUser => {
