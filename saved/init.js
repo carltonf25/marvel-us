@@ -3,6 +3,7 @@ $(function() {
     let savedModule = new SavedModule;
 
     let userId = savedModule.userId;
+    idsArray = [];
     
     savedModule.getSavedComics();
 
@@ -28,12 +29,14 @@ $(function() {
                 var childData = childSnapshot.val();
                 console.log(childKey);
                 console.log(childData);
+                childData.forEach( obj => {
+                    idsArray.push(obj.value());
+                    console.log(idsArray);
+                });
             });
         });
 
-        childData.forEach( obj => {
-            console.log(obj.value());
-        });
+
 
 
 
