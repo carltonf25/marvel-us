@@ -22,12 +22,12 @@ $(function() {
 
     $('.suggestions-container').on('click', '.save-btn', e => {
         console.log(e.target);
-        let comicID = $(e).target.data('id');
+        let comicID = $(e.target).data('id');
         console.log(comicID);
 
-        $(e).target.html('SAVED');
-        $(e).target.toggleClass('btn-success');
-        $(e).target.prop('disabled', true);
+        $(e.target).html('SAVED');
+        $(e.target).toggleClass('btn-success');
+        $(e.target).prop('disabled', true);
 
         
         //console.log($("[data-id='"+comicID+"']").prop('disabled'));
