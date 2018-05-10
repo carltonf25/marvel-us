@@ -29,7 +29,7 @@ $(function() {
                 console.log(childKey);
                 console.log(childData);
                 for (value in childData["user-comics"]) {
-                    console.log(childData.keyOf(value));
+                    console.log(childData[value]);
                     
 
                     }
