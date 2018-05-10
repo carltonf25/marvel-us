@@ -28,8 +28,8 @@ $(function() {
                 var childData = childSnapshot.val();
                 console.log(childKey);
                 console.log(childData);
-                for (value, key in childData["user-comics"]) {
-                    console.log(value);
+                for (key in childData["user-comics"]) {
+                    let value = childData["user-comics"][key];
                     let comic = firebase.database().ref('/user-data/'+userId+'/user-comics/'+value).once('value').then(snap =>{
                         return snap;
                     });
