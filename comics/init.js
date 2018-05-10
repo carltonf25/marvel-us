@@ -48,6 +48,7 @@ $(function() {
             firebase.database().ref().update(savingComic);
         }
         });
+        e.preventDefault();
     });
 
     $("#logOutButton").click(function(){
