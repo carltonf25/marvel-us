@@ -19,9 +19,8 @@ $(function() {
         
       });
 
-     firebase.database().ref('/user-data/'+userId + '/user-comics/').then(function(snapshot) { 
-        console.log(snapshot).child('user-comics'); 
-        });
+     let userData = firebase.database().ref('/user-data/'+userId + '/user-comics/');
+        console.log(userData);
 
 
 
