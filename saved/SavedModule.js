@@ -14,6 +14,7 @@ getSavedComics() {
        <img class="loader m-auto" src="../comics/loader.gif" />
     `);
 
+    
 
 // firebase data 
 
