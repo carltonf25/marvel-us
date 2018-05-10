@@ -21,6 +21,7 @@ $(function() {
     });
 
     $('.suggestions-container').on('click', '.save-btn', e => {
+        console.log(e);
         console.log($(this));
         let comicID = $(this).data('id');
         console.log(comicID);
