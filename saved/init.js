@@ -1,5 +1,5 @@
 $(function() {
-    let userId = null;
+    let userId = savedModule.userId;
     let savedModule = new SavedModule;
     savedModule.getSavedComics();
 
