@@ -1,6 +1,6 @@
 $(function() {
 
-    let savedModule = new SuggestionModule;
+    let savedModule = new SavedModule;
     savedModule.getSavedComics();
 
     firebase.auth().onAuthStateChanged(firebaseUser => {
