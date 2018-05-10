@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Marvel-US Login Page</title>  
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+    <script src="animate.js"></script>
+    <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
     <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
@@ -10,86 +18,105 @@
     <script src="../database/database.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Marvel-Us</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="../landing/index.html"><img src="../landing/images/Marvel-Us_Logo.png" width="80px" height="40px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-            <a class="nav-item nav-link" href="#">Comics<span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Characters</a>
-            <a class="nav-item nav-link" href="#">Saved</a>
-            </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../comics/index.html">Comics <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../characters/index.html">Characters</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../saved/index.html">Saved</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="../login/index.html">Login</a>
+                    </li>
+            </ul>
         </div>
     </nav>
-    <div class="container">
-        <div class="container">
-            <h3>HEROES</h3>
-            <div class="row" id="heroRow">
-                <div class="col-3">
-                    <div class="card" id="hero_img" style="width: 10rem;">
-                        <img class="card-img-top" src="img/hero1_BP.jpg" alt="Card image cap">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="card" id="hero_img" style="width: 10rem;">
-                        <img class="card-img-top" src="img/hero2_Th.jpg" alt="Card image cap">
-                    </div>    
-                </div>
-                <div class="col-3">
-                    <div class="card" id="hero_img" style="width: 10rem;">
-                        <img class="card-img-top" src="img/hero3_CA.jpg" alt="Card image cap">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="card" id="hero_img" style="width: 10rem;">
-                        <img class="card-img-top" src="img/hero4_Hu.jpg" alt="Card image cap">
-                    </div>
-                </div>
-            </div>
-            <div class="row" id="loginRow">
-                    <h6>Log in to start exploring your new favorite Heroes and read all of their <em>Marvel-Us</em> Comics!</h6>
-                <div class="login-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="inputEmail">Email address</label>
-                            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+
+    <div class="container-fluid background-banner home">
+        <div class="landing-logo text-center">
+            <img class="bannerHead responsive" src="../landing/images/Marvel-Us_Logo.png">
+        </div>
+    </div>
+    
+    <div class="contianer-fluid background overlay">
+        <div class="container bottom-half">
+            <div class="container">
+                <h3>HEROES</h3>
+                <div class="row" id="heroRow">
+                    <div class="col-3">
+                        <div class="card" id="hero_img" style="width: 10rem;">
+                            <img class="card-img-top" src="img/hero1_BP.jpg" alt="Card image cap">
                         </div>
-                        <div class="form-group">
-                            <label for="inputPassword">Password</label>
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    </div>
+                    <div class="col-3">
+                        <div class="card" id="hero_img" style="width: 10rem;">
+                            <img class="card-img-top" src="img/hero2_Th.jpg" alt="Card image cap">
+                        </div>    
+                    </div>
+                    <div class="col-3">
+                        <div class="card" id="hero_img" style="width: 10rem;">
+                            <img class="card-img-top" src="img/hero3_CA.jpg" alt="Card image cap">
                         </div>
-                        <button type="submit" id="loginButton" class="btn btn-primary">Log In</button>
-                        <button type="submit" id="signupButton" class="btn btn-primary">Sign Up</button>
-                    </form>
-                </div>
-            </div>
-            <!--Used for testing logout functionality. -->
-            <div class="row" id="logoutRow">
-                    <button type="submit" id="logoffButton" class="btn hide btn-danger">Log Out</button>
-            </div>
-            
-            <h3>COMICS</h3>
-            <div class="row" id="comicRow">
-                <div class="col-3">
-                    <div class="card" id="comic_img" style="width: 10rem;">
-                        <img class="card-img-top" src="img/comic1_Wo.jpg" alt="Card image cap">
+                    </div>
+                    <div class="col-3">
+                        <div class="card" id="hero_img" style="width: 10rem;">
+                            <img class="card-img-top" src="img/hero4_Hu.jpg" alt="Card image cap">
+                        </div>
                     </div>
                 </div>
-                <div class="col-3">
-                    <div class="card" id="comic_img" style="width: 10rem;">
-                        <img class="card-img-top" src="img/comic2_In.jpg" alt="Card image cap">
-                    </div>    
-                </div>
-                <div class="col-3">
-                    <div class="card" id="comic_img" style="width: 10rem;">
-                        <img class="card-img-top" src="img/comic3_Av.jpg" alt="Card image cap">
+                <div class="row" id="loginRow">
+                        
+                    <div class="login-form">
+                        <h6>Log in to start exploring your new favorite Heroes and read all of their <em>Marvel-Us</em> Comics!</h6>
+                        <form>
+                            <div class="form-group">
+                                <label for="inputEmail">Email address</label>
+                                <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword">Password</label>
+                                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                            </div>
+                            <button type="submit" id="loginButton" class="btn btn-primary">Log In</button>
+                            <button type="submit" id="signupButton" class="btn btn-primary">Sign Up</button>
+                        </form>
                     </div>
                 </div>
-                <div class="col-3">
-                    <div class="card" id="comic_img" style="width: 10rem;">
-                        <img class="card-img-top" src="img/comic4_Hu.jpg" alt="Card image cap">
+                <!--Used for testing logout functionality. -->
+                <div class="row" id="logoutRow">
+                        <button type="submit" id="logoffButton" class="btn hide btn-danger">Log Out</button>
+                </div>
+                
+                <h3>COMICS</h3>
+                <div class="row" id="comicRow">
+                    <div class="col-3">
+                        <div class="card" id="comic_img" style="width: 10rem;">
+                            <img class="card-img-top" src="img/comic1_Wo.jpg" alt="Card image cap">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card" id="comic_img" style="width: 10rem;">
+                            <img class="card-img-top" src="img/comic2_In.jpg" alt="Card image cap">
+                        </div>    
+                    </div>
+                    <div class="col-3">
+                        <div class="card" id="comic_img" style="width: 10rem;">
+                            <img class="card-img-top" src="img/comic3_Av.jpg" alt="Card image cap">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card" id="comic_img" style="width: 10rem;">
+                            <img class="card-img-top" src="img/comic4_Hu.jpg" alt="Card image cap">
+                        </div>
                     </div>
                 </div>
             </div>
