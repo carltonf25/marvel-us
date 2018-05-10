@@ -15,14 +15,14 @@ $(function() {
     });
 
     $('.suggest-btn').click( e => {
-        $(e).preventDefault();
+        e.preventDefault();
         $('.suggestions-container').empty();
         suggestionModule.getComicSuggestions();
     });
 
     $('.suggestions-container').on('click', '.save-btn', e => {
         console.log(e);
-        let comicID = e.data('id');
+        let comicID = $(e).data('id');
         console.log(comicID);
 
         $("[data-id='"+comicID+"']").html('SAVED');
