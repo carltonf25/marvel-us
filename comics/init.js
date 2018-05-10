@@ -21,11 +21,10 @@ $(function() {
     });
 
     $('.save-btn').click( e => {
-        e.preventDefault()
-        console.log(this);
-        console.log(e);
-        console.log(e.target.parentElement.parentElement.id);
-        let comicID = e.target.parentElement.parentElement.id;
+
+        let comicID = $(this).data('id');
+        console.log(comicID)
+
         $("[data-id='"+comicID+"']").html('SAVED');
         $("[data-id='"+comicID+"']").toggleClass('btn-success');
         $("[data-id='"+comicID+"']").prop('disabled', true);
