@@ -30,6 +30,9 @@ $(function() {
                 console.log(childData);
                 for (value in childData["user-comics"]) {
                     console.log(value);
+                    let comic = firebase.database().ref('/user-data/'+userId+'/user-comics/'+value);
+                    console.log(comic);
+
                     }
 
                 });
