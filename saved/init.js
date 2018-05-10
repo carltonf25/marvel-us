@@ -20,15 +20,15 @@ $(function() {
         
       });
 
-     let userData = firebase.database().ref('/user-data/'+userId+'/comic-ids');
-      console.log(userData.path.pieces_);
-        userData.once('value', function(snapshot){
+     let userData = firebase.database().ref('/user-data/'+userId);
+      console.log(userData);
+        userData['comic-ids'].once('value', function(snapshot){
             snapshot.forEach(function(childSnapshot) {
                 var childKey = childSnapshot.key;
                 var childData = childSnapshot.val();
                 console.log(childKey);
                 console.log(childData);
-                for (value in userData) {
+                for (value in childData) {
                     if (!userData.hasOwnProperty(value)) continue;
                     console.log(value);
                     console.log(userData[value]);
