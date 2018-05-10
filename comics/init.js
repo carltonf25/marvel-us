@@ -15,7 +15,7 @@ $(function() {
     });
 
     $('.suggest-btn').click( e => {
-        e.preventDefault();
+        $(e).preventDefault();
         $('.suggestions-container').empty();
         suggestionModule.getComicSuggestions();
     });
