@@ -67,8 +67,10 @@ $(function() {
           // No user is signed in.
           window.location = '../login/index.html';  
           console.log("not logged in");
-        }
-      }); */
+        } 
+        
+        */
+      }); 
 });
 
 
