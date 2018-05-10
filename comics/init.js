@@ -28,6 +28,8 @@ $(function() {
         $("[data-id='"+comicID+"']").html('SAVED');
         $("[data-id='"+comicID+"']").toggleClass('btn-success');
         $("[data-id='"+comicID+"']").prop('disabled', true);
+
+        /*
         //console.log($("[data-id='"+comicID+"']").prop('disabled'));
         let currentComics = firebase.database().ref('/user-data/'+userId + '/user-comics/').once('value').then(function(snapshot) {
             console.log(snapshot);
@@ -66,7 +68,7 @@ $(function() {
           window.location = '../login/index.html';  
           console.log("not logged in");
         }
-      });
+      }); */
 });
 
 
