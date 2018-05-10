@@ -25,9 +25,9 @@ $(function() {
         let comicID = $(e).data('id');
         console.log(comicID);
 
-        $("[data-id='"+comicID+"']").html('SAVED');
-        $("[data-id='"+comicID+"']").toggleClass('btn-success');
-        $("[data-id='"+comicID+"']").prop('disabled', true);
+        $(e).html('SAVED');
+        $(e).toggleClass('btn-success');
+        $(e).prop('disabled', true);
 
         
         //console.log($("[data-id='"+comicID+"']").prop('disabled'));
