@@ -38,7 +38,7 @@ h3 {
 .overlay {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 200px;
     left: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.75);  
