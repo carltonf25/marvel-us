@@ -28,7 +28,7 @@ $(function() {
                 var childData = childSnapshot.val();
                 console.log(childKey);
                 console.log(childData);
-                for (key in userData) {
+                for (value in userData) {
                     if (!userData.hasOwnProperty(value)) continue;
                     console.log(value);
                     console.log(userData[value]);
